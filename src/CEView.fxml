@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane prefHeight="628.0" prefWidth="372.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WxController">
+<Pane prefHeight="628.0" prefWidth="372.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CEController">
    <children>
       <ScrollBar layoutX="358.0" layoutY="74.0" orientation="VERTICAL" prefHeight="556.0" prefWidth="8.0" />
       <GridPane layoutX="-2.0" layoutY="74.0" prefHeight="556.0" prefWidth="354.0" style="-fx-background-color: black;">

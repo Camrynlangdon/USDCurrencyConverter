@@ -9,14 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class WxController implements Initializable {
+public class CEController implements Initializable {
 
   @FXML
   private Button btnGetWx;
@@ -85,46 +83,40 @@ public class WxController implements Initializable {
   @FXML
   private void handleButtonAction(ActionEvent e) {
     // Create object to access the Model
-    WxModel weather = new WxModel();
+    CEModel exchange = new CEModel();
 
     // Get zipcode
     String userAmount = txtAmount.getText();
 
-    // Use the model to get the weather information
-    if (weather.isValid(userAmount))
+    // Use the model to get the exchange information
+    if (exchange.isValid(userAmount))
     {
-      weather.fetchCurrency();
-      lblTime.setText(weather.time);
-      lblUSD.setText(weather.USD);
-      lblAED.setText(weather.AED);
-      lblAFN.setText(weather.AFN);
-      lblALL.setText(weather.ALL);
-      lblAMD.setText(weather.AMD);
-      lblANG.setText(weather.ANG);
-      lblAOA.setText(weather.AOA);
-      lblARS.setText(weather.ARS);
-      lblAUD.setText(weather.AUD);
-      lblAWG.setText(weather.AWG);
-      lblAZN.setText(weather.AZN);
-      lblBAM.setText(weather.BAM);
-      lblBBD.setText(weather.BBD);
-      lblBDT.setText(weather.BDT);
-      lblBGN.setText(weather.BGN);
-      lblBHD.setText(weather.BHD);
-      lblBIF.setText(weather.BIF);
-      lblBMD.setText(weather.BMD);
-      lblBOB.setText(weather.BOB);
-      lblBRL.setText(weather.BRL);
-      lblBSD.setText(weather.BSD);
-      lblBTN.setText(weather.BTN);
-      lblBWP.setText(weather.BWP);
-      lblBZD.setText(weather.BZD);
-
-
-
-
-
-      System.out.println("working");
+      exchange.fetchCurrency();
+      lblTime.setText(exchange.time);
+      lblUSD.setText(exchange.USD);
+      lblAED.setText(exchange.AED);
+      lblAFN.setText(exchange.AFN);
+      lblALL.setText(exchange.ALL);
+      lblAMD.setText(exchange.AMD);
+      lblANG.setText(exchange.ANG);
+      lblAOA.setText(exchange.AOA);
+      lblARS.setText(exchange.ARS);
+      lblAUD.setText(exchange.AUD);
+      lblAWG.setText(exchange.AWG);
+      lblAZN.setText(exchange.AZN);
+      lblBAM.setText(exchange.BAM);
+      lblBBD.setText(exchange.BBD);
+      lblBDT.setText(exchange.BDT);
+      lblBGN.setText(exchange.BGN);
+      lblBHD.setText(exchange.BHD);
+      lblBIF.setText(exchange.BIF);
+      lblBMD.setText(exchange.BMD);
+      lblBOB.setText(exchange.BOB);
+      lblBRL.setText(exchange.BRL);
+      lblBSD.setText(exchange.BSD);
+      lblBTN.setText(exchange.BTN);
+      lblBWP.setText(exchange.BWP);
+      lblBZD.setText(exchange.BZD);
 
     }
     else

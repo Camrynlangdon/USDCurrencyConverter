@@ -11,15 +11,15 @@ import javafx.stage.Stage;
 /**
  * @author Tim McGowen
  */
-public class WxMain extends Application {
+public class CEMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("./WxView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CEView.fxml"));
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Wx - Camryn Langdon");
+        stage.setTitle("CE - Camryn Langdon");
         stage.show();
     }
 

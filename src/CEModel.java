@@ -11,7 +11,7 @@ import java.util.Date;
 
 //Camryn Langdon
 
-public class WxModel {
+public class CEModel {
     private static JsonElement jse;
     private static String ACCESS_TOKEN = "4700f76443a75a13d5d0325f";
 
@@ -259,7 +259,7 @@ public class WxModel {
 
 
     public static void main(String[] args) {
-        WxModel test = new WxModel();
+        CEModel test = new CEModel();
 
         if (test.isValid("4.02")){
             test.fetchCurrency();
