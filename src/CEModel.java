@@ -30,7 +30,7 @@ public class CEModel {
 
 
 
-    public void fetchCurrency()
+    public Boolean fetchCurrency()
     {
 
 
@@ -214,23 +214,27 @@ public class CEModel {
         }
         catch (java.io.UnsupportedEncodingException uee)
         {
-            uee.printStackTrace();
+            return false;
         }
         catch (java.io.FileNotFoundException uee)
         {
-            uee.printStackTrace();
+            return false;
         }
         catch (java.net.MalformedURLException mue)
         {
-            mue.printStackTrace();
+            return false;
         }
         catch (IOException ioe)
         {
-            ioe.printStackTrace();
+            return false;
+        }
+        catch (NumberFormatException ioe)
+        {
+            return false;
         }
 
 
-
+    return true;
 
     }
 
@@ -239,10 +243,14 @@ public class CEModel {
     }
 
     public boolean isValid(String userAmount){
+        //check if user input is a number before fetching API
         if (userAmount.matches("[0-9.]+")){
             //set amount from user input if valid
             this.amount = userAmount;
-            return true;
+            if(fetchCurrency() == true){
+                return true;
+            }
+            return false;
         }
             return false;
         }
@@ -256,10 +264,11 @@ public class CEModel {
     }
 
 
+
     public static void main(String[] args) {
         CEModel test = new CEModel();
 
-        if (test.isValid("4.02")){
+        if (test.isValid("4.02.2")){
             test.fetchCurrency();
             System.out.println("Time since last update UTC: " + test.time);
             System.out.println("USD: " + test.USD);
@@ -272,6 +281,7 @@ public class CEModel {
         } else {
             System.out.println("Enter a valid amount!");
         }
+
 
     }
 

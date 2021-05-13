@@ -91,7 +91,6 @@ public class CEController implements Initializable {
     // Use the model to get the exchange information
     if (exchange.isValid(userAmount))
     {
-      exchange.fetchCurrency();
       lblTime.setText(exchange.time);
       lblUSD.setText(exchange.USD);
       lblAED.setText(exchange.AED);
