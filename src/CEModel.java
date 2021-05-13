@@ -44,11 +44,8 @@ public class CEModel {
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             jse = new JsonParser().parse(br);
 
-
+            //fetch and calculate data
             this.time = dateConversion(String.valueOf(jse.getAsJsonObject().get("time_last_update_unix")));
-
-
-
             this.USD = calculate(jse.getAsJsonObject().get("conversion_rates").getAsJsonObject().get("USD"));
             this.AED = calculate(jse.getAsJsonObject().get("conversion_rates").getAsJsonObject().get("AED"));
             this.AFN = calculate(jse.getAsJsonObject().get("conversion_rates").getAsJsonObject().get("AFN"));
@@ -243,6 +240,7 @@ public class CEModel {
 
     public boolean isValid(String userAmount){
         if (userAmount.matches("[0-9.]+")){
+            //set amount from user input if valid
             this.amount = userAmount;
             return true;
         }
